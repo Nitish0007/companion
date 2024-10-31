@@ -18,8 +18,17 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>  
+    <div class="fixed-top container mt-3">
+      <% if notice.present? %>
+        <p class="notice alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert.present? %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+    </div>
+
+  <div class="content">
     <%= yield %>
+  </div>
   </body>
 </html>
